@@ -89,6 +89,13 @@ a:hover {
 .navbar-inverse .navbar-toggle {
   background: #444;
 }
+.copyrights{
+	text-indent:-9999px;
+	height:0;
+	line-height:0;
+	font-size:0;
+	overflow:hidden;
+}
 #top-bar {
   background: #fff;
   color: #fff;
