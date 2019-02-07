@@ -1,0 +1,140 @@
+
+<HTML>
+<HEAD>
+<title>MPS Project</title>
+<link rel="stylesheet" href="jemdoc.css" type="text/css">
+</HEAD>
+<BODY>
+<center>
+<h1>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</h1>
+<h3>Andrew Price, Linyi Jin, Dmitry Berenson</h3>
+
+<p>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OTELmpUqPEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+
+
+
+
+
+<p>
+<br>
+<table width="80%">
+<tr><td align="justify">
+<p>
+<!-- <b>Figure 1</b>: An overview of our data collection method. Given an arbitrary video, we follow standard steps of structure-from-motion: extracting feature points and matching them across frames, estimating the camera parameters, and performing triangulation to obtain a reconstruction. A Quality Assessment Network (QANet) examines the operation of the SfM pipeline and assigns a score to the reconstruction. If the score is above a certain threshold, this reconstruction is deemed of high quality, and we use it as single-view depth training data. Otherwise, the reconstruction is discarded. -->
+<br>
+
+
+<h2>Abstract</h2>
+The ability to find objects in cluttered scenes is essential for enabling many robotics applications in warehouse and household environments.
+However, cluttered environments entail that objects often occlude one another, making it difficult to segment objects and infer their shapes and properties. We do not assume CAD or other explicit models of objects are available. 
+Instead, we augment a manipulation planner for cluttered environments with a state-of-the-art deep neural network for shape completion as well as a volumetric memory system. These components allow the robot to reason about what may be contained in occluded areas without explicit object models. We test the system in a variety of tabletop manipulation scenes composed of household items, highlighting its applicability to realistic domains. Our results suggest that shape completion allows the robot to reduce the amount of occluded space to explore by removing occluded regions that are a part of visible objects. Likewise, volumetric memory allows the robot to track previously-seen shapes and free space that are now occluded, again allowing a better estimate of the unknown space. Finally, we show that incorporating both components into a manipulation planning framework significantly reduces the number of actions needed to find a hidden object in dense clutter.
+
+
+<h2>Publication</h2>
+
+    
+<table>
+  <tbody>
+    <tr>
+      <td width="50">
+        <a href="mps_image/mps_rss_2019.pdf">
+        <img src="mps_image/paper.jpg" border="0" width="100">
+        </a>
+      </td>
+
+      <td>  
+        <h3><a href="mps_image/mps_rss_2019.pdf"></a></h3>      
+        <p>   
+          <b>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</b>,<br>
+          Andrew Price, Linyi Jin, Dmitry Berenson<br>
+          [<a href="mps_image/mps_rss_2019.pdf">paper</a>]
+        </p>
+      </td>     
+    </tr>     
+  </tbody>
+</table>
+
+<h2>System Framework</h2>
+<img src="mps_image/pipelinefig.png" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<b>Figure 1</b>: Diagram of our framework. Components in red text reason about occlusion. We developed two modules to augment the baseline system 
+(1) <b>Shape completion</b>: A method, based on previous work<sup>[1]</sup>, to infer the shape of a partially-occluded object.
+    (2) <b>Shape memory</b>: A method to track free space seen earlier in the interaction, as well as previously observed occupied space that has been moved into an occluded region.
+<br>
+
+<h2>Shape Completion Architecture</h2>
+<img src="mps_image/augmentedRecGAN.jpg" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<b>Figure 2</b>: Our network architecture for shape completion. Both the occupancy voxels and free voxels are encoded using the ﬁve 3D convolutional layers used by 3D-RecGAN. In order to train a network to reconstruct occluded parts from cluttered scenes, we modify and augment the dataset synthesis steps so that the objects are not only self-occluded but also occluded by an obstacle.
+<br>
+
+<h2>Qualitative Results of Shape Completion</h2>
+<img src="mps_image/shape_completion_result.png" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<b>Figure 3</b>: Qualitative results on the partially occluded objects on several objects. (a) Input voxels; (b) 3D-RecGAN trained on unoccluded dataset; (c) 3D-RecGAN trained on occluded dataset; (d) 3D-RecGAN trained on occluded dataset with free space as augmented input. (e) Ground truth. The pitcher is in the training set. The box, sprayer and toy airplane are not in the training set.
+<br>
+
+<h2>Experimental Results</h2>
+<img src="mps_image/scenes.jpeg" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<b>Figure 4</b>: Experimental configurations. In each scene, the target object is the yellow/green softball. The robot is located at the top of the image where it cannot see the softball. Totally 182 manipulation experiments were conducted.
+<img src="mps_image/expresults.png" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<b>Figure 5</b>: Recorded action depths required to successfully retrieve the target object from each scene.
+<br>
+
+<tr><td align="left">
+
+<tr><td align="left">
+
+
+
+
+<br>
+
+<h2>Code</h2>
+Coming soon.
+
+
+
+<h2>Reference</h2>
+[1] Bo Yang, Hongkai Wen, Sen Wang, Ronald Clark, Andrew Markham, Niki Trigoni "3D Object Reconstruction from a Single Depth View with Adversarial Learning." International Conference on Computer Vision Workshops, 2017. 
+
+
+<br>
+<br>
+<tr><td align="left">
+<h3>CONTACT</h3>
+
+Please send any questions or comments to  <a href="mailto:pricear@umich.edu">Andrew Price</a>  and <a href="mailto:jinlinyi@umich.edu">Linyi Jin</a>.
+
+</table>
+</center>
+
+
+
+</BODY>
