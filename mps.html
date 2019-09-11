@@ -3,15 +3,33 @@
 <HEAD>
 <title>MPS Project</title>
 <link rel="stylesheet" href="jemdoc.css" type="text/css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
 </HEAD>
 <BODY>
 <center>
 <h1>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</h1>
-<h3>Andrew Price, Linyi Jin, Dmitry Berenson</h3>
-
+<h3>Andrew Price*, <a href="https://jinlinyi.github.io">Linyi Jin</a>*, <a href="http://web.eecs.umich.edu/~dmitryb/">Dmitry Berenson</a></h3>
 <p>
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/OTELmpUqPEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+University of Michigan, Ann Arbor
+<br>In ISRR 2019
+<p>
+    <img src="mps_image/teaser.jpg" alt="Teaser" style="width:100%">
+<p>
+    <i><b>Left</b>: Our robot sliding an object in a cluttered scene to reveal the target (the yellow ball). <b>Right</b>: The robot's representation of the world, including shape-completed objects and memory of previously seen shapes and free space. Yellow voxels represent the table or unclassified points, gray represents occluded “shadows”, and other colors represent shape-completed segments. </i>
 
 
 
@@ -25,64 +43,41 @@
 <tr><td align="justify">
 
 <h2>Abstract</h2>
-The ability to find objects in cluttered scenes is essential for enabling many robotics applications in warehouse and household environments.
-However, cluttered environments entail that objects often occlude one another, making it difficult to segment objects and infer their shapes and properties. We do not assume CAD or other explicit models of objects are available. 
-Instead, we augment a manipulation planner for cluttered environments with a state-of-the-art deep neural network for shape completion as well as a volumetric memory system. These components allow the robot to reason about what may be contained in occluded areas without explicit object models. We test the system in a variety of tabletop manipulation scenes composed of household items, highlighting its applicability to realistic domains. Our results suggest that shape completion allows the robot to reduce the amount of occluded space to explore by removing occluded regions that are a part of visible objects. Likewise, volumetric memory allows the robot to track previously-seen shapes and free space that are now occluded, again allowing a better estimate of the unknown space. Finally, we show that incorporating both components into a manipulation planning framework significantly reduces the number of actions needed to find a hidden object in dense clutter.
+Object search -- the problem of finding a target object in a cluttered scene -- is essential to solve for many robotics applications in warehouse and household environments.
+However, cluttered environments entail that objects often occlude one another, making it difficult to segment objects and infer their shapes and properties.
+Instead of relying on the availability of CAD or other explicit models of scene objects, we augment a manipulation planner for cluttered environments with a state-of-the-art deep neural network for shape completion as well as a volumetric memory system, allowing the robot to reason about what may be contained in occluded areas.
+We test the system in a variety of tabletop manipulation scenes composed of household items, highlighting its applicability to realistic domains.
+Our results suggest that incorporating both components into a manipulation planning framework significantly reduces the number of actions needed to find a hidden object in dense clutter.
+<h2>Video</h2>
+<p>
 
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OTELmpUqPEI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
 <h2>Publication</h2>
     
 <table>
   <tbody>
     <tr>
       <td width="50">
-        <a href="mps_image/mps_rss_2019.pdf">
+        <a href="https://arxiv.org/abs/1907.08770">
         <img src="mps_image/paper.jpg" border="0" width="100">
         </a>
       </td>
 
-      <td>  
-        <h3><a href="mps_image/mps_rss_2019.pdf"></a></h3>      
+      <td>       
         <p>   
-          <b>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</b>, submitted on Feb. 1<br>
-          Andrew Price, Linyi Jin, Dmitry Berenson<br>
-          [<a href="mps_image/mps_rss_2019.pdf">paper</a>]
+          A. Price*, L. Jin*, D. Berenson<br>
+        <b><i>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</i></b>
+        <br>
+        ISRR 2019<br> 
+          [<a href="https://arxiv.org/abs/1907.08770">ArXiv</a>]
         </p>
       </td>     
     </tr>     
   </tbody>
 </table>
 
-<h2>System Framework</h2>
-<img src="mps_image/pipelinefig.png" width=800px><br>
-<p>
-<br>
-<table width="100%">
-<tr><td align="justify">
-<p>
-<b>Figure 1</b>: Diagram of our framework. Components in red text reason about occlusion. We developed two modules to augment the baseline system 
-(1) <b>Shape completion</b>: A method, based on previous work<sup>[1]</sup>, to infer the shape of a partially-occluded object.
-    (2) <b>Shape memory</b>: A method to track free space seen earlier in the interaction, as well as previously observed occupied space that has been moved into an occluded region.
-<br>
-
-<h2>Shape Completion Architecture</h2>
-<img src="mps_image/augmentedRecGAN.jpg" width=800px><br>
-<p>
-<br>
-<table width="100%">
-<tr><td align="justify">
-<p>
-<b>Figure 2</b>: Our network architecture for shape completion. Both the occupancy voxels and free voxels are encoded using the ﬁve 3D convolutional layers used by 3D-RecGAN. In order to train a network to reconstruct occluded parts from cluttered scenes, we modify and augment the dataset synthesis steps so that the objects are not only self-occluded but also occluded by an obstacle.
-<br>
-
-<h2>Qualitative Results of Shape Completion</h2>
-<img src="mps_image/shape_completion_result.png" width=800px><br>
-<p>
-<br>
-<table width="100%">
-<tr><td align="justify">
-<p>
-<b>Figure 3</b>: Qualitative results on the partially occluded objects on several objects. (a) Input voxels; (b) 3D-RecGAN trained on unoccluded dataset; (c) 3D-RecGAN trained on occluded dataset; (d) 3D-RecGAN trained on occluded dataset with free space as augmented input. (e) Ground truth. The pitcher is in the training set. The box, sprayer and toy airplane are not in the training set.
-<br>
 
 <h2>Experimental Results</h2>
 <img src="mps_image/scenes.jpeg" width=800px><br>
@@ -90,15 +85,14 @@ Instead, we augment a manipulation planner for cluttered environments with a sta
 <br>
 <table width="100%">
 <tr><td align="justify">
-<p>
-<b>Figure 4</b>: Experimental configurations. In each scene, the target object is the yellow/green softball. The robot is located at the top of the image where it cannot see the softball. Totally 182 manipulation experiments were conducted.
+<i><b>Experimental configurations.</b>  In each scene, the target object is the yellow/green softball. The robot is located at the top of the image where it cannot see the softball. Totally 182 manipulation experiments were conducted.</i>
 <img src="mps_image/expresults.png" width=800px><br>
 <p>
 <br>
 <table width="100%">
 <tr><td align="justify">
 <p>
-<b>Figure 5</b>: Recorded action depths required to successfully retrieve the target object from each scene. Results show that our full framework significantly reduces the number of actions necessary to retrieve a target object in densely-cluttered scenarios.
+<i>Recorded action depths required to successfully retrieve the target object from each scene. Results show that our full framework significantly reduces the number of actions necessary to retrieve a target object in densely-cluttered scenarios.</i>
 <br>
 
 <tr><td align="left">
@@ -107,18 +101,9 @@ Instead, we augment a manipulation planner for cluttered environments with a sta
 
 <br>
 
-<h2>Code</h2>
-Coming soon.
+<h2>Acknowledgements</h2>
+This research was funded in part by Toyota Research Institute (TRI).
 
-<h2>Reference</h2>
-[1] Bo Yang, Hongkai Wen, Sen Wang, Ronald Clark, Andrew Markham, Niki Trigoni "3D Object Reconstruction from a Single Depth View with Adversarial Learning." International Conference on Computer Vision Workshops, 2017. 
-
-<br>
-<br>
-<tr><td align="left">
-<h3>CONTACT</h3>
-
-Please send any questions or comments to  <a href="mailto:pricear@umich.edu">Andrew Price</a>  and <a href="mailto:jinlinyi@umich.edu">Linyi Jin</a>.
 
 </table>
 </center>
