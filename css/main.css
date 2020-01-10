@@ -1091,3 +1091,9 @@ article {
   color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
+.research {
+  padding-left: 20px;
+}
+.teaching {
+  padding-left: 20px;
+}
