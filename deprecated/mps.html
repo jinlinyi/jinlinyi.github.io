@@ -1,0 +1,111 @@
+
+<HTML>
+<HEAD>
+<title>MPS Project</title>
+<link rel="stylesheet" href="jemdoc.css" type="text/css">
+<style>
+* {
+  box-sizing: border-box;
+}
+
+.row {
+  display: flex;
+}
+
+/* Create three equal columns that sits next to each other */
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}
+</style>
+</HEAD>
+<BODY>
+<center>
+<h1>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</h1>
+<h3><a href="http://www.prism.gatech.edu/~aprice6/#">Andrew Price</a>*, <a href="https://jinlinyi.github.io">Linyi Jin</a>*, <a href="http://web.eecs.umich.edu/~dmitryb/">Dmitry Berenson</a></h3>
+<p>
+University of Michigan, Ann Arbor
+<br>In ISRR 2019
+<p>
+    <img src="mps_image/teaser.jpg" alt="Teaser" style="width:100%">
+<p>
+    <i><b>Left</b>: Our robot sliding an object in a cluttered scene to reveal the target (the yellow ball). <b>Right</b>: The robot's representation of the world, including shape-completed objects and memory of previously seen shapes and free space. Yellow voxels represent the table or unclassified points, gray represents occluded “shadows”, and other colors represent shape-completed segments. </i>
+
+
+
+
+
+
+
+<p>
+<br>
+<table width="80%">
+<tr><td align="justify">
+
+<h2>Abstract</h2>
+Object search -- the problem of finding a target object in a cluttered scene -- is essential to solve for many robotics applications in warehouse and household environments.
+However, cluttered environments entail that objects often occlude one another, making it difficult to segment objects and infer their shapes and properties.
+Instead of relying on the availability of CAD or other explicit models of scene objects, we augment a manipulation planner for cluttered environments with a state-of-the-art deep neural network for shape completion as well as a volumetric memory system, allowing the robot to reason about what may be contained in occluded areas.
+We test the system in a variety of tabletop manipulation scenes composed of household items, highlighting its applicability to realistic domains.
+Our results suggest that incorporating both components into a manipulation planning framework significantly reduces the number of actions needed to find a hidden object in dense clutter.
+<h2>Video</h2>
+<p>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/BXgkv2nFvM4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<h2>Publication</h2>
+    
+<table>
+  <tbody>
+    <tr>
+      <td width="50">
+        <a href="https://arxiv.org/abs/1907.08770">
+        <img src="mps_image/paper.jpg" border="0" width="100">
+        </a>
+      </td>
+
+      <td>       
+        <p>   
+          A. Price*, L. Jin*, D. Berenson<br>
+        <b><i>Inferring Occluded Geometry Improves Performance when Retrieving an Object from Dense Clutter</i></b>
+        <br>
+        ISRR 2019<br> 
+          [<a href="https://arxiv.org/abs/1907.08770">ArXiv</a>]
+        </p>
+      </td>     
+    </tr>     
+  </tbody>
+</table>
+
+
+<h2>Experimental Results</h2>
+<img src="mps_image/scenes.jpeg" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<i><b>Experimental configurations.</b>  In each scene, the target object is the yellow/green softball. The robot is located at the top of the image where it cannot see the softball. Totally 182 manipulation experiments were conducted.</i>
+<img src="mps_image/expresults.jpg" width=800px><br>
+<p>
+<br>
+<table width="100%">
+<tr><td align="justify">
+<p>
+<i>Recorded action depths required to successfully retrieve the target object from each scene. Results show that our full framework significantly reduces the number of actions necessary to retrieve a target object in densely-cluttered scenarios.</i>
+<br>
+
+<tr><td align="left">
+
+<tr><td align="left">
+
+<br>
+
+<h2>Acknowledgments</h2>
+This research was funded in part by Toyota Research Institute (TRI).
+
+
+</table>
+</center>
+
+</BODY>
