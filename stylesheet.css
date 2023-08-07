@@ -140,3 +140,7 @@
     background: #333;
     background-image: linear-gradient(to right, #ccc, #7e7e7e, #ccc);
 }
+.image-inline {
+    height: 14px;
+    vertical-align: middle; /* Aligns the middle of the element with the middle of the line height of its parent */
+}
