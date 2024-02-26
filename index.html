@@ -54,6 +54,7 @@
             <td style="padding:20px;width:100%;vertical-align:middle">
               <h2>News</h2>
               <p>
+                - [2024/02] Two papers are accepted to CVPR 2024! <br>
                 - [2024/05] I will be a Student Researcher at <img src="images/Google.png" class="image-inline"/>, working with Noah Snavely and Aleksander Hołyński. <br>
                 - [2023/09] I will be a visiting student at <img src="images/NYU_Short_RGB_Color.png" class="image-inline" /> since David is moving there! <br>
                 - [2023/06] We have released <img src="images/hf-logo.png" class="image-inline" /> <a href="https://huggingface.co/spaces/jinlinyi/PerspectiveFields">demo</a> for PerspectiveFields. Try it out on your camera calibration problem! <br>
@@ -105,25 +106,66 @@
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
 
-
-      <tr onmouseout="pers_stop()" onmouseover="pers_start()">
+      <tr onmouseout="far_stop()" onmouseover="far_start()">
         <td style="padding:20px;width:25%;vertical-align:middle">
           <div class="one">
-            <div class="two" id='pers_image'><video  width=100% height=100% muted autoplay loop>
+            <div class="two" id='far_image'><video  width=100% height=100% muted autoplay loop>
+            <source src="images/projects/far/far.jpeg" type="video/mp4">
+            Your browser does not support the video tag.
+            </video></div>
+            <img src='images/projects/far/far.jpeg' width="160">
+          </div>
+          <script type="text/javascript">
+            function far_start() {
+              document.getElementById('far_image').style.opacity = "1";
+            }
+
+            function far_stop() {
+              document.getElementById('far_image').style.opacity = "0";
+            }
+            far_stop()
+          </script>
+        </td>
+        <td width="75%" valign="middle">
+            <a href="">
+            <span class="papertitle">	FAR: Flexible, Accurate and Robust 6DoF Relative Camera Pose Estimation.</span>
+            </a>
+            <br>
+            <a href="https://crockwell.github.io/">Chris Rockwell</a>, 
+            <a href="https://nileshkulkarni.github.io/">Nilesh Kulkarni</a>, 
+            <strong>Linyi Jin</strong>, 
+            <a href="https://jjparkcv.github.io/">JJ Park</a>, 
+            <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>, 
+            <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+            <br>
+            <em>CVPR</em>, 2024
+            <br>
+
+            <p></p>
+            <p>
+              Our flexible method produces accurate and robust pose estimates using complementary strengths of Correspondence + Solver and Learning-Based methods.
+            </p>
+        </td>
+      </tr>
+
+      <tr onmouseout="_3dfires_stop()" onmouseover="_3dfires_start()">
+        <td style="padding:20px;width:25%;vertical-align:middle">
+          <div class="one">
+            <div class="two" id='_3dfires_image'><video  width=100% height=100% muted autoplay loop>
             <source src="images/projects/3dfires/rotate.mp4" type="video/mp4">
             Your browser does not support the video tag.
             </video></div>
             <img src='images/projects/3dfires/teaser.jpg' width="160">
           </div>
           <script type="text/javascript">
-            function pers_start() {
-              document.getElementById('pers_image').style.opacity = "1";
+            function _3dfires_start() {
+              document.getElementById('_3dfires_image').style.opacity = "1";
             }
 
-            function pers_stop() {
-              document.getElementById('pers_image').style.opacity = "0";
+            function _3dfires_stop() {
+              document.getElementById('_3dfires_image').style.opacity = "0";
             }
-            pers_stop()
+            _3dfires_stop()
           </script>
         </td>
         <td width="75%" valign="middle">
@@ -135,7 +177,7 @@
             <a href="https://nileshkulkarni.github.io/">Nilesh Kulkarni</a>, 
             <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
             <br>
-            coming soon
+            <em>CVPR</em>, 2024
             <br>
 
             <p></p>
@@ -144,6 +186,7 @@
             </p>
         </td>
       </tr>
+
 
 
       <tr onmouseout="pers_stop()" onmouseover="pers_start()">
