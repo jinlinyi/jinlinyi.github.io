@@ -128,6 +128,106 @@
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <!-- stereo4d -->
+            <tr onmouseout="stereo4d_stop()" onmouseover="stereo4d_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='stereo4d_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/projects/stereo4d/stereo4d.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/projects/stereo4d/stereo4d-static.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function stereo4d_start() {
+                    document.getElementById('stereo4d_image').style.opacity = "1";
+                  }
+      
+                  function stereo4d_stop() {
+                    document.getElementById('stereo4d_image').style.opacity = "0";
+                  }
+                  stereo4d_stop()
+                </script>
+              </td>
+              <td width="75%" valign="middle">
+                  <a href="https://stereo4d.github.io/">
+                  <span class="papertitle">Stereo4D: Learning How Things Move in 3D from Internet Stereo Videos</span>
+                  </a>
+                  <br>
+                  <strong>Linyi Jin</strong>, 
+                  <a href="https://scholar.google.com/citations?user=IkpNZAoAAAAJ&hl=en">Richard Tucker</a>, 
+                  <a href="https://zhengqili.github.io/">Zhengqi Li</a>, 
+                  <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>,
+                  <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>*,
+                  <a href="https://holynski.org/">Aleksander Holynski</a>*,
+                  <br>
+                  <em>arXiv</em> 2024
+                  <br>
+                  
+                  <a href="https://stereo4d.github.io/">project page</a>
+                  /
+                  <a href="https://arxiv.org/pdf/2412.09621">arXiv</a>
+                  /
+                  <a href="./images/projects/stereo4d/stereo4d.bibtex">bibtex</a>
+      
+                  <p></p>
+                  <p>
+                    Use stereo videos from the internet to create a dataset of over 100,000 real-world 4D scenes with metric scale and long-term 3D motion trajectories.
+                  </p>
+              </td>
+            </tr>
+
+            <!-- megasam -->
+            <tr onmouseout="megasam_stop()" onmouseover="megasam_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='megasam_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/projects/megasam/megasam.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/projects/megasam/megasam-static.png' width="160">
+                </div>
+                <script type="text/javascript">
+                  function megasam_start() {
+                    document.getElementById('megasam_image').style.opacity = "1";
+                  }
+      
+                  function megasam_stop() {
+                    document.getElementById('megasam_image').style.opacity = "0";
+                  }
+                  megasam_stop()
+                </script>
+              </td>
+              <td width="75%" valign="middle">
+                  <a href="https://mega-sam.github.io/">
+                  <span class="papertitle">	MegaSaM: Accurate, Fast and Robust Structure and Motion from Casual Dynamic Videos</span>
+                  </a>
+                  <br>
+                  <a href="https://zhengqili.github.io/">Zhengqi Li</a>, 
+                  <a href="https://scholar.google.com/citations?user=IkpNZAoAAAAJ&hl=en">Richard Tucker</a>, 
+                  <a href="https://research.google/people/forrestercole/">Forrester Cole</a>, 
+                  <a href="https://qianqianwang68.github.io/">Qianqian Wang</a>,
+                  <strong>Linyi Jin</strong>, 
+                  <a href="https://people.eecs.berkeley.edu/~vye/">Vickie Ye</a>,
+                  <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>,
+                  <a href="https://holynski.org/">Aleksander Holynski</a>,
+                  <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>
+                  <br>
+                  <em>arXiv</em> 2024
+                  <br>
+                  
+                  <a href="https://mega-sam.github.io">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2412.04463">arXiv</a>
+                  /
+                  <a href="./images/projects/megasam/megasam.bibtex">bibtex</a>
+      
+                  <p></p>
+                  <p>
+                    MegaSaM estimates cameras and dense structure, quickly and accurately, from any static or dynamic video.
+                  </p>
+              </td>
+            </tr>
 
       <tr onmouseout="far_stop()" onmouseover="far_start()">
         <td style="padding:20px;width:25%;vertical-align:middle">
@@ -159,7 +259,7 @@
             <strong>Linyi Jin</strong>, 
             <a href="https://jjparkcv.github.io/">JJ Park</a>, 
             <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>, 
-            <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+            <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
             <br>
             <em>CVPR</em>, 2024 (<span style="color:#a00"><b>Highlight -- 11.9% accept rate</b></span>)
             <br>
@@ -206,7 +306,7 @@
             <br>
             <strong>Linyi Jin</strong>, 
             <a href="https://nileshkulkarni.github.io/">Nilesh Kulkarni</a>, 
-            <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+            <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
             <br>
             <em>CVPR</em>, 2024
             <br>
@@ -260,7 +360,7 @@
             <a href="http://www.oliverwang.info/">Oliver Wang</a>,
             <a href="http://kmatzen.com/">Kevin Matzen</a>,
             <a href="https://www.linkedin.com/in/matthew-sticha-746325202">Matthew Sticha</a>,
-            <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+            <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
             <br>
             <em>CVPR</em>, 2023 (<span style="color:#a00"><b>Highlight -- 2.5% accept rate</b></span>)
             <br>
@@ -311,7 +411,7 @@
                 <a href="https://nileshkulkarni.github.io/">Nilesh Kulkarni</a>, 
                 <strong>Linyi Jin</strong>, 
                 <a href="https://web.eecs.umich.edu/~justincj/">Justin Johnson</a>,
-                <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+                <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
                 <br>
                 <em>CVPR</em>, 2023
                 <br>
@@ -361,7 +461,7 @@
                 <a href="https://www.linkedin.com/in/samiragarwala/">Samir Agarwala</a>, 
                 <strong>Linyi Jin</strong>, 
                 <a href="https://crockwell.github.io/">Chris Rockwell</a>, 
-                <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+                <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
                 <br>
                 <em>ECCV</em>, 2022
                 <br>
@@ -372,7 +472,7 @@
                 /
                 <a href="https://github.com/samiragarwala/PlaneFormers">code</a>
                 /
-                <a href="https://web.eecs.umich.edu/~fouhey/2022/planeformer/agarwala22.bib">bibtex</a>
+                <a href="https://cs.nyu.edu/~fouhey/2022/planeformer/agarwala22.bib">bibtex</a>
 
                 <p></p>
                 <p>
@@ -409,7 +509,7 @@
                 <strong>Linyi Jin</strong>, 
                 <a href="https://crockwell.github.io/">Chris Rockwell</a>, 
                 <a href="https://chicychen.github.io/">Siyi Chen</a>, 
-                <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+                <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
                 <br>
                 <em>CVPR</em>, 2022
                 <br>
@@ -420,7 +520,7 @@
                 /
                 <a href="https://github.com/JasonQSY/Articulation3D">code</a>
                 /
-                <a href="https://web.eecs.umich.edu/~fouhey/2022/articulation/qian22.bib">bibtex</a>
+                <a href="https://cs.nyu.edu/~fouhey/2022/articulation/qian22.bib">bibtex</a>
 
                 <p></p>
                 <p>
@@ -457,7 +557,7 @@
                 <strong>Linyi Jin</strong>, 
                 <a href="https://jasonqsy.github.io/">Shengyi Qian</a>, 
                 <a href="http://andrewowens.com/">Andrew Owens</a>,  
-                <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+                <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
                 <br>
                 <em>ICCV</em>, 2021 (<span style="color:#a00"><b>Oral</b></span>)
                 <br>
@@ -504,7 +604,7 @@
                 <br>
                 <a href="https://jasonqsy.github.io/">Shengyi Qian</a>*, 
                 <strong>Linyi Jin</strong>*, 
-                <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>
+                <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>
                 <br>
                 <em>ECCV</em>, 2020
                 <br>
@@ -590,11 +690,11 @@
                     <img src="images/442.jpeg"  width="160" height="160" style="border-style: none">
                 </td>
                 <td width="75%" valign="middle">
-                    <a href="https://web.eecs.umich.edu/~fouhey/teaching/EECS442_W19/">
+                    <a href="https://cs.nyu.edu/~fouhey/teaching/EECS442_W19/">
                     <span class="papertitle">EECS 442 Computer Vision (Winter '19)</span>
                     </a>
                     <br>
-                    IA with <a href="https://web.eecs.umich.edu/~fouhey/">David Fouhey</a>.
+                    IA with <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>.
                     <br>
                 </td>
             </tr>
