@@ -130,6 +130,57 @@
           </tbody></table>
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+            <!-- eye2eye -->
+            <tr onmouseout="eye2eye_stop()" onmouseover="eye2eye_start()">
+              <td style="padding:20px;width:25%;vertical-align:middle">
+                <div class="one">
+                  <div class="two" id='eye2eye_image'><video  width=100% height=100% muted autoplay loop>
+                  <source src="images/projects/eye2eye/eye2eye.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                  </video></div>
+                  <img src='images/projects/eye2eye/eye2eye-static.jpg' width="160">
+                </div>
+                <script type="text/javascript">
+                  function eye2eye_start() {
+                    document.getElementById('eye2eye_image').style.opacity = "1";
+                  }
+      
+                  function eye2eye_stop() {
+                    document.getElementById('eye2eye_image').style.opacity = "0";
+                  }
+                  eye2eye_stop()
+                </script>
+              </td>
+              <td width="75%" valign="middle">
+                  <a href="https://video-eye2eye.github.io/">
+                  <span class="papertitle">Eye2Eye: A simple approach for monocular-to-stereo video synthesis</span>
+                  </a>
+                  <br>
+                  <a href="https://michalgeyer.my.canva.site/">Michal Geyer</a>, 
+                  <a href="https://scholar.google.com/citations?hl=en&user=lbo_R54AAAAJ">Omer Tov</a>,
+                  <strong>Linyi Jin</strong>, 
+                  <a href="https://scholar.google.com/citations?user=IkpNZAoAAAAJ&hl=en">Richard Tucker</a>, 
+                  <a href="https://inbar-mosseri.github.io/">Inbar Mosseri</a>,
+                  <a href="https://www.weizmann.ac.il/math/dekel/home">Tali Dekel</a>,
+                  <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>
+                  <br>
+                  <em>arXiv</em> 2025 
+                  <br>
+                  
+                  <a href="https://video-eye2eye.github.io/">project page</a>
+                  /
+                  <a href="https://arxiv.org/abs/2505.00135">arXiv</a>
+                  /
+                  <a href="./images/projects/eye2eye/eye2eye.bibtex">bibtex</a>
+      
+                  <p></p>
+                  <p>
+                    We use video models to convert monocular videos into stereo videos that can be viewed with 3D glasses or VR headsets. 
+                    It handles challenging scenes with specular and semi-transparent objects.
+                  </p>
+              </td>
+            </tr>
+
             <!-- stereo4d -->
             <tr onmouseout="stereo4d_stop()" onmouseover="stereo4d_start()">
               <td style="padding:20px;width:25%;vertical-align:middle">
@@ -161,14 +212,14 @@
                   <a href="https://zhengqili.github.io/">Zhengqi Li</a>, 
                   <a href="https://cs.nyu.edu/~fouhey/">David Fouhey</a>,
                   <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>*,
-                  <a href="https://holynski.org/">Aleksander Holynski</a>*,
+                  <a href="https://holynski.org/">Aleksander Hołyński</a>*
                   <br>
                   <em>CVPR</em> 2025 (<span style="color:#a00"><b>Oral</b></span>)
                   <br>
                   
                   <a href="https://stereo4d.github.io/">project page</a>
                   /
-                  <a href="https://arxiv.org/pdf/2412.09621">arXiv</a>
+                  <a href="https://arxiv.org/abs/2412.09621">arXiv</a>
                   /
                   <a href="./images/projects/stereo4d/stereo4d.bibtex">bibtex</a>
                   /
@@ -214,7 +265,7 @@
                   <strong>Linyi Jin</strong>, 
                   <a href="https://people.eecs.berkeley.edu/~vye/">Vickie Ye</a>,
                   <a href="https://people.eecs.berkeley.edu/~kanazawa/">Angjoo Kanazawa</a>,
-                  <a href="https://holynski.org/">Aleksander Holynski</a>,
+                  <a href="https://holynski.org/">Aleksander Hołyński</a>,
                   <a href="https://www.cs.cornell.edu/~snavely/">Noah Snavely</a>
                   <br>
                   <em>CVPR</em> 2025 (<span style="color:#a00"><b>Oral</b></span>)
